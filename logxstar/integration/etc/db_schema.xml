@@ -1,0 +1,14 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sales_order">
+    	<column xsi:type="varchar" name="internal_reference" length="32" comment="Logxstar internal reference"/>
+    	<column xsi:type="text" name="logxstar_pickuppoint"  comment="Logxstar pickuppoint"/>
+    	<column xsi:type="varchar" name="logxstar_status" length="255" comment="Logxstar status"/>
+    	<column xsi:type="varchar" name="logxstar_selected_date" length="10" comment="Logxstar delivery date"/>
+	    <column xsi:type="mediumtext" name="logxstar_label"  comment="Logxstar label"/>
+	</table>
+    <table name="sales_order_grid">
+    	<column xsi:type="varchar" name="logxstar_status" length="255" comment="Logxstar status"/>
+    	<column xsi:type="varchar" name="logxstar_selected_date" length="10" comment="Delivery date"/>
+    </table>
+</schema>

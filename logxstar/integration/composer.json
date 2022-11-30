@@ -1,0 +1,20 @@
+{
+    "name": "logxstar\/integration",
+    "description": "logxstar integration",
+    "require": {
+        "php": "~5.5.0|~5.6.0|>=7.0.0|>=8.0.0"
+    },
+    "type": "magento2-module",
+    "version": "1.0.3",
+    "license": [
+        "Proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Logxstar\\Integration\\": ""
+        }
+    }
+}

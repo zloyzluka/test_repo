@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <logxstar>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>Logxstar\Integration\Model\Carrier\Logxstar</model>
+                <title>Logxstar</title>
+                <logxstar_host>https://os.logxstar.com/</logxstar_host>
+                <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+                <use_weight>0</use_weight>
+                <weight_settings>use_hardcoded</weight_settings>
+                <max_package_weight>1000</max_package_weight>
+                <disable_for_stores></disable_for_stores>
+            </logxstar>
+        </carriers>
+    </default>
+</config>

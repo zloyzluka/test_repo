@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers">
+            <group id="logxstar" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Logxstar Shipping</label>
+                <comment>version (2.4.0)</comment>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="logxstar_key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>API key</label>
+                    <comment>Add key here</comment>
+                </field>
+                <field id="logxstar_multi_key" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Major API key</label>
+                    <comment>If have a major key for all your shops, add one here</comment>
+                </field>
+                <field id="logxstar_host" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>API host</label>
+                    <comment>Add host here</comment>
+                </field>
+
+                <field id="weight_settings" translate="label" type="radios" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Weight setting</label>
+                    <source_model>Logxstar\Integration\Block\Adminhtml\Form\Field\UseWeightRadio</source_model>
+                </field>
+
+                <field id="use_business" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Allow to select a business group</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="business_id" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>GROUP ID</label>
+                    <comment>Add GROUP ID here(you can use comma to add several IDs e.g 1,3,22)</comment>
+                    <depends>
+                        <field id="use_business">1</field>
+                    </depends>
+                </field>
+                <field id="use_button" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Use button</label>
+                    <comment>Show 'Select popup' link as button</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Method Title</label>
+                </field>
+                <field id="sallowspecific" translate="label" type="select" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="910" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="920" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Method if Not Applicable</label>
+                    <frontend_class>shipping-skip-hide</frontend_class>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="specificerrmsg" translate="label" type="textarea" sortOrder="800" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Displayed Error Message</label>
+                </field>
+                <field id="debug" translate="label" type="select" sortOrder="920" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="1000" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                </field>
+                <field id="map_api" translate="label" type="text" sortOrder="2000" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Google Map Api Key</label>
+                    <comment><![CDATA[Used in pickup locations popup. <a href="https://developers.google.com/maps/documentation/javascript/get-api-key">Get Api Key</a>]]></comment>
+                </field>
+                <field id="country_freeshipping" translate="label" sortOrder="3000" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Country Freeshipping</label>
+                    <frontend_model>Logxstar\Integration\Block\Adminhtml\Form\Field\CountryFreeshipping</frontend_model>
+                    <backend_model>Logxstar\Integration\Model\Adminhtml\System\Config\CountryFreeshipping</backend_model>
+                    <comment><![CDATA[Freeshipping Message example: <br/><i>Spend extra {{extra_value}} and get free shipping:</i>]]></comment>
+                </field>
+                <field id="freeshipping_includes_tax" translate="label comment" type="select" sortOrder="3010" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Freeshipping Prices</label>
+                    <comment>This sets whether freeshipping prices entered above includes tax.</comment>
+                    <source_model>Magento\Tax\Model\System\Config\Source\PriceType</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

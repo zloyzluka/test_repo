@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="buttons" xsi:type="array">
+            <item name="updateStatus" xsi:type="array">
+                <item name="name" xsi:type="string">updateStatus</item>
+                <item name="label" xsi:type="string" translate="true">Update Logxstar Statuses</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">logxstar/sales_order/updateStatuses</item>
+            </item>
+        </item>
+    </argument>
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction">
+            <action name="print_logxstar_label">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">print_logxstar_label</item>
+                        <item name="label" xsi:type="string" translate="true">Print Logxstar Labels</item>
+                        <item name="url" xsi:type="url" path="logxstar/sales_order/massPrintLogxstarLabel"/>
+                    </item>
+                </argument>
+            </action>
+        </massaction>
+    </listingToolbar>
+    <columns name="sales_order_columns">
+        <column name="logxstar_status">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="sortOrder" xsi:type="number">1000</item>
+                    <item name="label" xsi:type="string" translate="true">Logxstar Status</item>
+                </item>
+            </argument>
+        </column>
+        <column name="logxstar_selected_date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">date</item>
+                    <item name="sortOrder" xsi:type="number">1000</item>
+                    <item name="label" xsi:type="string" translate="true">Selected Date</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>
